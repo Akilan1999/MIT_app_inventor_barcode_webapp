@@ -1,10 +1,10 @@
 <%- include header/header.ejs %>
 
 <body>
-   <%- include header/left_panel.ejs %>
+
     <!-- Right Panel -->
     <div id="right-panel" class="right-panel">
-        <%- include header/top_nav.ejs %>
+        
         <!-- Content -->
         <div class="content">
             <!-- Animated -->
@@ -30,31 +30,31 @@
                                             <thead>
                                                 <tr>
                                                     <th class="serial">#</th>
-                                                    <th>Sellers</th>
-                                                    <th>Cost per KwH</th>
-                                                    <th>Kwh avaliable</th>
-                                                    <th>Buy</th>
+                                                    <th>Barcode num</th>
+                                                    <th>Delete</th>
+
                                                 </tr>
                                             </thead>
                                             <tbody>
-
+                                            <% var i = 0;
+                                            for(var l = barcodes.length - 1; l >= 0; l--){ %>
                                                 <tr>
-                                                    <td class="serial">lol</td>
-                                                    <td id="">lol</td>
-                                                    <td id="">lol</td>
-                                                    <td id="">lol</td>
+                                                    <td class="serial"><%= ++i%></td>
+                                                    <td id=""><%= barcodes[l] %></td>
                                                     <td>
-                                                        <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#largeModal" onclick="">Add</button>
+                                                       <a class="" href="/delete?id=<%=l%>" style="color:darkred;font-size:1.5rem;"><i class="ti-close"></i></a>
                                                     </td>
                                                 </tr>
-
+                                            <% } %>
                                             </tbody>
                                         </table>
                                     </div> <!-- /.table-stats -->
                                 </div>
                             </div> <!-- /.card -->
                         </div>  <!-- /.col-lg-10 -->
-
+                        <div class="col-xl-10">
+                        <center><a class="btn btn-success" href="/send" style="font-size:1.5rem;">Send barcodes</a></center>
+                        </div>
                     </div>
                 </div>
                 <!-- /.orders -->

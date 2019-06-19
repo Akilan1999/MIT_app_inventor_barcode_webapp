@@ -4,7 +4,8 @@
   "description": "Centralized for internet of energy ",
   "main": "app.js",
   "scripts": {
-    "test": "ioe"
+    "test": "ioe",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
     "mysql": "^2.17.1",
     "onoff": "^4.1.1",
     "path": "^0.12.7",
+    "request": "^2.88.0",
     "sleep": "^6.1.0"
   }
 }
